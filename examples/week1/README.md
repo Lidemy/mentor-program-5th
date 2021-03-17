@@ -32,5 +32,3 @@
 再來還有一件事情很重要，那就是 master 就只是「預設的 branch」，或者通常是最主要的 branch，但這並不代表它是「最新的 branch」。舉例來說，你也可以切出一條 branch 叫做「test」，然後一直往 test 加東西，但是從來都不合併回 master，那 test 就是在你專案裡的最新的 branch。所以 master 就只是一條預設的 branch 而已，最新的東西不一定在上面。
 
 另外，發 PR 的時候如果有東西你想改，其實你可以自己在電腦上改完以後 commit 再 push，GitHub 上的 PR 就會自動更新了，你什麼都不用做，更不用把 PR 關掉再開起來。因為 PR 的主體是「branch」，所以 branch 更新了，PR 的內容自然也會一起更新。
-
-

@@ -103,7 +103,9 @@
 
 在學習之前若是能先把心態培養好，之後學習起來會容易得多。
 
-底下有幾篇文章，幾乎都跟學習有關，可以參考看看：
+底下有幾篇文章，幾乎都跟學習有關，可以參考看看。
+
+由於文章很多又很長，不需要全部看完，建議在你學習迷惘時可以隨便找一篇點開來看：
 
 1. [打造「正確」學習 mindset](https://medium.com/@hulitw/mindset-36c163303217)
 2. [學程式的第零課：心態調整](https://medium.com/hulis-blog/before-learning-b9b933b6078e)
@@ -131,7 +133,7 @@ Mindset 建立：
 
 #### 指定教材
 
-先看 [CMD101] Command Line 超新手入門的全部課程來熟悉 command line 的使用。熟悉以後觀看 [GIT101] Git 超新手入門 的全部課程，學習如何使用 Git。
+先看 [CMD101] Command Line 超新手入門的全部課程來熟悉 command line 的使用。熟悉以後觀看 [GIT101] Git 超新手入門的全部課程，學習如何使用 Git。
 
 如果 CMD101 看不太懂，也可以看 [CS101] 初心者的計概與 coding 火球術的 2-1 ~ 2-4，一樣是與 command line 相關的課程。
 
@@ -189,7 +191,7 @@ Mindset 建立：
 
 在程式基礎的部分一週是絕對不夠的，因此本週會繼續加強程式基礎。在這一週裡面我們會延伸上一週的內容，並且多講一些有關於 ES6 的語法。
 
-本週的作業有自動批改系統，請傳到 [Lidemy OJ](https://oj.lidemy.com/) 上，並且確認每一題都有答對之後再交作業，否則我會直接退件，
+本週的作業有自動批改系統，請傳到 [Lidemy OJ](https://oj.lidemy.com/) 上，並且確認每一題都有答對之後再交作業，否則我會直接退件。
 
 最後，在這週也會講到 eslint，我已經幫大家設置好了 eslint，這是一個能夠幫你自動做語法檢查的工具，在每次 commit 之前都會自動檢查程式碼的規範，不符合規範的話不會讓你 commit。
 
@@ -259,7 +261,7 @@ Mindset 建立：
 
 如果你之前因為趕時間而亂寫作業，現在是回去重新省視一遍的好時機；或者是之前有查到什麼有趣的延伸資料但沒時間看的，這一週你就有時間看了。
 
-在複習週是沒有任何進度的，但是會有兩個小挑戰，讓你們檢驗前面學到的技能。
+複習週一樣是有作業的，但是會比較輕鬆一點，這週有兩個小挑戰，讓你們檢驗前面學到的技能。
 
 #### HTTP Game
 
@@ -273,7 +275,13 @@ Mindset 建立：
 
 NPSC 中文全名為[網際網路程式設計全國大賽](https://contest.cc.ntu.edu.tw/npsc2018/)，是台大每年都會辦給國中生跟高中生參加的比賽。
 
-裡面很多題目都很有趣，適合拿來給程式初學者練習，之前在 ALG101 的第七單元其實就有提到過，還沒看完的可以順便看一下。因為 NPSC 的題目沒有辦法對外授權，所以我自己出了一堆類似的題目，大家可以上 [LIOJ](https://oj.lidemy.com/) 把其他沒有寫過的題目寫一寫，訓練一下程式基礎。
+裡面很多題目都很有趣，適合拿來給程式初學者練習，之前在 ALG101 的第七單元其實就有提到過，還沒看完的可以順便看一下。因為 NPSC 的題目沒有辦法對外授權，所以我自己出了一堆類似的題目，大家可以上 [LIOJ](https://oj.lidemy.com/) 訓練一下程式基礎。
+
+這次希望大家做的題目為：
+
+1. [不合群的人](https://oj.lidemy.com/problem/1016)
+2. [貪婪的小偷](https://oj.lidemy.com/problem/1017)
+3. [大平台](https://oj.lidemy.com/problem/1018)
 
 [HW5 作業連結](/homeworks/week5)
 
@@ -291,7 +299,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 先看 [FE101] 前端基礎：HTML 與 CSS 這堂課熟悉 HTML 與 CSS，並且練習切版。接著可以看 [Chrome 網頁除錯功能大解密](https://www.udemy.com/chrome-devtools/)來熟悉 Chrome devtool 的使用方式。
 
-如果覺得課程太理論，想要看比較偏實戰的，可以看 Lidemy 上第四期的「第六週特別補充課程：position 與 display 實戰篇 by minw 助教」相關單元，會有各種切版實戰。
+如果覺得課程太理論，想要看比較偏實戰的，可以看 Lidemy 上第五期的「第六週特別補充課程：position 與 display 實戰篇 by minw 助教」相關單元，會有各種切版實戰。
 
 若是還有時間，可以透過這兩個小遊戲來熟悉 CSS Selector 跟 Flexbox 排版的方法：
 
@@ -381,7 +389,6 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 1. [白話 Session 與 Cookie：從經營雜貨店開始](https://medium.com/@hulitw/session-and-cookie-15e47ed838bc)
 2. [淺談 Session 與 Cookie：一起來讀 RFC](https://blog.huli.tw/2019/08/09/session-and-cookie-part2/)
 3. [深入 Session 與 Cookie：Express、PHP 與 Rails 的實作](https://blog.huli.tw/2019/08/09/session-and-cookie-part3/)  
-
 
 [HW9 作業連結](/homeworks/week9)
 
@@ -500,7 +507,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 1. 什麼是 Promise？
 2. 什麼是 Fetch？
 
-在 CSS 的部分呢，也會補充兩個小主題（影片製作中）：
+在 CSS 的部分呢，也會補充兩個小主題：
 
 1. CSS Selector 權重的計算方式
 2. CSS Sprites 與 Data URI
@@ -550,9 +557,9 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 也會讓大家購買自己的網域，理解如何將網域以及主機串連起來，讓大家可以連線到你的網站。
 
-這週也要特別感謝 [gandi](https://www.gandi.net/) 連續四期全額贊助了網域的費用 <(_ _)>。
+這週也要特別感謝 [gandi](https://www.gandi.net/) 連續五期全額贊助了網域的費用 <(_ _)>。
 
-第四期學生請找助教索取網域的折扣碼（每人限一個），可以用來註冊 .tw 的域名。
+第五期學生請找助教索取網域的折扣碼（每人限一個），可以用來註冊 .tw 的域名。
 
 除此之外，也會稍微提到一些系統架構，還有跟資料庫的一些知識，像是 ACID、Transaction、View 以及 Stored procedure 等等，這些專有名詞的重要性是 P2 與 P3，只要稍微聽過有個印象就好。
 
@@ -906,7 +913,7 @@ Redux 的官方文件前陣子剛重寫過，我覺得寫得很棒，把 Redux �
 
 正式的課程就到這邊告一段落了，你學了前端後端與程式相關的基礎知識，接下來需要做一些作品累積經驗，因此接下來幾週都會讓同學做出屬於自己的 Final Project，建議可以與其他人合作，但也可以選擇一個人單打獨鬥。
 
-根據第一期的經驗，其實找人合作會是比較好的選擇（第二期因進度問題沒有 Final Project）。
+根據過往的經驗，其實找人合作會是比較好的選擇。
 
 如果大家一點靈感都沒有的話，可以參考以下幾個提案（但有自己的想法當然是最好的）：
 
@@ -950,15 +957,6 @@ Redux 的官方文件前陣子剛重寫過，我覺得寫得很棒，把 Redux �
 2. Google Map API
 3. Google Login, Facebook Login
 4. 金流
-
-## 繳交 Final Project
-
-請準備好以下幾個東西並且於第二十七週 po 到 Slack 裡面：
-
-1. 作品網址（沒主機或是 deploy 碰到問題的可以來找我）
-2. 5 分鐘以內介紹作品的短片，上傳到 YouTube（可以不用露臉，你不想出聲的話後製加文字也可以）
-3. GitHub 網址（請確保你有把一些敏感的資訊例如說資料庫密碼之類的拿掉）
-4. 做 final project 的心得（看你想寫在哪裡都可以）
 
 ## 自我練習
 

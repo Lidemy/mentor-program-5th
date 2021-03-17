@@ -8,4 +8,7 @@
 
 而複習週的慣例就是會提供闖關遊戲讓大家玩，也可以一併把心得寫下來
 
+1. [綜合能力測驗](http://mentor-program.co/huli/game/index.php)
+2. [r3:0 異世界網站挑戰](https://r30challenge.herokuapp.com/)
+
 請將答案寫在 [hw1.md](hw1.md)。
