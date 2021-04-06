@@ -5,21 +5,18 @@ module.exports = {
     node: true,
     jest: true
   },
-  extends: 'airbnb',
+  extends: '@lidemy/eslint-config-lidemy',
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 2018
   },
-  plugins: [
-    'react',
-  ],
   rules: {
-    "no-console": "off"
-  },
-};
+    'no-console': 'off'
+  }
+}
