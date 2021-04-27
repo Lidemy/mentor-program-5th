@@ -12,7 +12,7 @@ request(
     for (let i = 0; i < country.length; i++) {
       console.log('============')
       console.log(`國家：${country[i].name}`)
-      console.log(`首都: ${country[i].capital}`)
+      console.log(`首都：${country[i].capital}`)
       console.log(`貨幣：${country[i].currencies[0].code}`)
       console.log(`國碼：${country[i].callingCodes}`)
     }
