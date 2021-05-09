@@ -1,0 +1,55 @@
+*{
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", "Questrial", Sans-serif;
+  
+}
+h1{
+  margin: 5px 0px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  border-top: 8px solid #fad312;
+  width:650px;
+  box-shadow: 1.8px 2.4px 5px 0 rgb(0 0 0 / 30%);
+  padding: 30px;
+  margin: 100px auto;
+  min-width: 450px;
+}
+.form header p, main p:last-child{
+  font-size: 16px;
+  white-space: pre-line;
+  margin: 0px;
+  line-height: 1.8;
+}
+
+.block{
+  margin: 45px 0px;
+  position: relative;
+}
+.block p{
+  font-weight: bold;
+  font-size: 22px;
+}
+.block__choice{
+  line-height: 1.5;
+}
+
+.block p:not(#ans__other):after{
+  content: "*";
+  position: relative;
+  left: 5px;
+  top: 1px;
+  color: red;
+}
+.form__submit{
+  width: 92px;
+  height: 40px;
+  background-color: #fad312;
+  padding:1px 6px;
+  border: 0;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 10px 0px;
+}
