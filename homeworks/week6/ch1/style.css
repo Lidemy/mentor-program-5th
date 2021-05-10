@@ -1,0 +1,109 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Verdana, Geneva, sans-serif;
+
+}
+body{
+  margin:7px auto;
+  background-color: rgb(246, 246, 239);
+  width: 802px;
+}
+nav{
+  position: relative;
+  display: flex;
+  height: 25px;
+  background-color: rgb(255, 102, 0);
+  align-items: center;
+  font-size: 16px;
+}
+img {
+  border: 1px solid white;
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+header{
+  font-weight: bold;
+  margin: 0px 10px 0px 3px;
+}
+
+.links ~ .links::before {
+  content: "| ";
+  position: relative;
+  top:0px;
+  margin-left: 2px;
+  right: 0px;
+}
+span#login {
+  right: 5px;
+  position: absolute;
+}
+.footer__links,.content__link{
+  display: flex;
+}
+main{
+  margin:10px 0px;
+}
+
+.links{
+  font-size: 16px;
+  cursor: pointer;
+}
+.content{
+  position: relative;
+  line-height: 1.2;
+  font-size: 16px;
+  margin: 3px;
+  margin:5px 0px
+}
+.content__link, #search{
+  color: #828282;
+}
+.content__title::before{
+  content:url(https://news.ycombinator.com/grayarrow.gif);
+  width: 10px;
+  height: 10px;
+  position: relative;
+  margin: 3px 0px;
+  top: -2px;
+  right: -2px;
+  cursor: pointer;
+  color: #828282;
+}
+.content__title::after{
+  content: '('attr(data-domain)')';
+  position: relative;
+  margin: 3px 0px;
+  top:0px;
+  right:0px;
+  cursor: pointer;
+  color: #828282;
+}
+.content__title:hover,#login{
+  cursor: pointer;
+}
+.content__title:hover::after,
+li .links:hover {
+  text-decoration: underline;
+}
+body.div{
+  position: relative;
+}
+a {
+  text-decoration-line: blink;
+  color: #828282;
+  left: 40px;
+  position: relative;
+}
+footer{
+  border-top:2px solid rgb(255, 102, 0);
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  line-height: 2.5;
+}
