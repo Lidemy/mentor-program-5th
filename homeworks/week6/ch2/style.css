@@ -1,0 +1,563 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+a{
+  text-decoration: none;
+  color:#e4e6eb
+}
+.webpage:not(nav){
+  background-color: #18191a;
+}
+nav{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  background-color: rgb(36,37,38);
+  border-bottom:2px solid #393a3b;
+  z-index: 2;
+  top: 0px;
+}
+.searchbar{
+  display: flex;
+  align-items: center;
+}
+
+.searchbar__img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color:#385898;
+  margin: 10px;
+}
+.searchbar input{
+  height: 40px;
+  width: 250px;
+}
+.nav{
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.nav__i{
+  padding: 13px 48px;
+  color: #e4e6eb;
+  margin: 2px;
+  position: relative;
+}
+
+.nav__i:not(#home):hover ,
+.leftbar__group__wrap:hover, 
+.rightbar__ads__wrap a:hover,
+.birthday__wrap:hover,
+.friend:hover
+{
+    background-color: #3a3b3c;
+    border-radius: 10px;
+}
+.nav__i {
+    padding: 13px 48px;
+    color: #e4e6eb;
+    margin: 2px;
+    position: relative;
+    transition: all 0.3s ease-in;
+    width: 10vw;
+    max-width: 130px;
+    min-width: 45px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.nav {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.nav__i:hover::after,
+.setting__i:hover::after,
+.icon__wrap:hover::after,
+.newmessage:hover::after
+{
+  content: attr(data-text);
+  color: black;
+  position: absolute;
+  top: 63px;
+  transform: translateX(50%);
+  right: 50%;
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 5px 5px 10px 0px rgb(112 112 112);
+  z-index:5;
+}
+.nav__i:not(#home):hover{
+  background-color: #3a3b3c;
+  border-radius: 10px;
+}
+
+.setting, .setting__name{
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  text-decoration:none
+}
+.setting__name{
+  height: 36px;
+  width: 84px;
+  border-radius: 50px;
+  justify-content: center;
+  padding: 1px;
+}
+
+.setting__name:hover{
+  background-color: #3a3b3c;
+}
+.setting__name__img{
+  width: 28px;
+  height: 28px;
+  background: url(https://image.shutterstock.com/image-photo/portrait-surprised-cat-scottish-straight-260nw-499196506.jpg);
+  border-radius: 50%;
+  background-position: top;
+  background-size: 70px;
+  margin: 2px;
+}
+.setting__name span{
+  color: #e4e6eb;
+  width: 33px;
+  height: 22px;
+  margin: 2px;
+}
+.setting__i{
+  padding:20px;
+  color: #e4e6eb;
+  border-radius: 50%;
+  background-color: #3a3b3c;
+  width: 40px;
+  height: 40px;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+.setting__i:hover{
+  background-color: #636464;
+}
+#home{
+  border-bottom:5px solid #2d88ff;
+  color: #2d88ff;
+}
+.leftbar__group__wrap img{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-position: top;
+  position: relative;
+  background-size: 70px;
+  margin: 6px;
+  object-fit: cover;
+}
+.leftbar {
+  display: flex;
+  position: fixed;
+  top: 62px;
+  width: 30vw;
+  flex-wrap: wrap;
+  background: #18191a;
+  max-width: 360px;
+  height: 100vh;
+}
+.leftbar__group{
+  top: 70px;
+  width: 330px;
+  margin: 15px 0px;
+  padding: 15px 8px;
+  border-bottom: 1px solid gray;
+}
+.leftbar__group__wrap,
+.rightbar__ads__title,
+.birthday__content{
+  padding: 0px 8px;
+  color: #e4e6eb;
+  font-size: 16px;
+}
+.leftbar__group__wrap{
+  padding: 3px 0px;
+}
+.fa-angle-down,.fa-edit{
+  font-size: 20px;
+  color: #e4e6eb;
+}
+.angle_wrap,.newmessage{
+  width: 36px;
+  height: 36px;
+  background-color:#303031;
+  border-radius:50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.leftbar__group__wrap a,.leftbar__group__wrap{
+  display: flex;
+  align-items: center;
+}
+.leftbar__shortcut{
+  top: 70px;
+  width: 330px;
+  margin: 0 0 100px 0;
+  padding: 8px;
+}
+.leftbar__shortcut img{
+  border-radius: 10px;
+  height: 36px;
+  width: 36px;
+  object-fit: cover;
+}
+
+
+.rightbar {
+  display: flex;
+  position: fixed;
+  right: 0px;
+  top: 70px;
+  z-index: 1;
+}
+.leftbar__links{
+  font-size: 16px;
+  color: #b0b3b8;
+  height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 34px;
+    margin-left: 2px;
+    align-content: flex-start;
+}
+.leftbar__links a, .rightbar__ads__domain{
+  position: relative;
+  text-decoration:none;
+  color: #b0b3b8;
+  padding-left: 8px;
+}
+.leftbar__links a:hover{
+  text-decoration-line: underline;
+}
+.leftbar__links a::after{
+  content: '·';
+  position: relative;
+  top: 0px;
+  right: 0px;
+  padding: 2px;
+  font-size: 16px;
+}
+.rightbar__ads__img.firstimg{
+  background-image: url(https://memes.tw/user-maker/dfba4177613f8069eb7293ff02610097.gif);
+}
+.rightbar__ads__img.secondimg{
+  background-image: url(https://media4.giphy.com/media/H4DjXQXamtTiIuCcRU/giphy.gif);
+}
+.rightbar__ads__img{
+  width: 130px;
+  height: 130px;
+  background-size: contain;
+  background-position: center;
+  border-radius: 10px;
+}
+.bar__title{
+  color: #b0b3b8;
+  font-size: 18px;
+  font-weight: bold;
+}
+.rightbar {
+  display: flex;
+  position: fixed;
+  right: 0px;
+  top: 62px;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 30vw;
+  background: #18191a;
+  max-width: 360px;
+  height: 100vh;
+  padding: 0px 8px;
+}
+.rightbar__ads__wrap a{
+  display: inline-flex;
+  align-items: center;
+  padding:8px;
+  width: 98%;
+}
+.rightbar__ads {
+    padding: 20px 0px;
+}
+.birthday__img{
+  background-image: url(https://cdn.cnn.com/cnnnext/dam/assets/201020121618-amazon-holiday-lead.jpg);
+  height: 36px;
+  width: 36px;  
+  border-radius: 10px;
+  background-position: center;
+  background-size: 70px;
+}
+.birthday__wrap{
+  padding: 12px 8px;
+}
+.rightbar__birthdays{
+  margin: 10px 0px 20px;
+}
+.birthday__wrap a{
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.rightbar__contacts__title{
+  display: inline-flex;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+}
+.rightbar__contacts__icon{
+  width: 113px;
+  justify-content: space-around;
+  display: flex;
+  z-index: 4;
+}
+.icon__wrap{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 16px;
+  color:#b0b3b8
+}
+.icon__wrap:hover,.newmessage:hover{
+  background-color: #3a3b3c;
+}
+.friend_img{
+  height: 36px;
+  width: 36px;
+  position: relative;
+  border-radius: 50%;
+}
+.f1{
+  background-image: url(https://media.vogue.com.tw/photos/5fe72950b50de03a82917b9b/master/w_457,c_limit/2020-12-26_200257.jpg);
+  background-position: 50px 78px;
+  background-size: 65px;
+}
+.f2{
+  background-image: url(https://static.wikia.nocookie.net/ghibli/images/4/4a/%E8%B2%93%E7%94%B7%E7%88%B51.jpg/revision/latest?cb=20180515101057&path-prefix=zh);
+  background-size: 39px;
+}
+.f3{
+  background-image: url(https://upload.wikimedia.org/wikipedia/zh/0/09/Spirited_away_poster.jpg);
+  background-position: 68px 80px;
+  background-size: 78px;
+}
+.friend_img::after{
+  content: "";
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  right: -2px;
+  background-color: #31a24c;
+  border: 2px solid #18191a;
+}
+.friend{
+  display:inline-flex;
+  align-items: center;
+  width: 98%;
+}
+.friend span{
+  margin: 10px;
+}
+.icon__wrap:hover::after {
+  white-space: pre;
+  right: 152%;
+  top: 35px;
+}
+.newmessage{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 48px;
+  height: 48px;
+}
+.newmessage:hover::after{
+  white-space: nowrap;
+  right: 106%;
+  transform: none;
+  top:5px
+}
+main{
+  width: 50vw;
+  min-width: 600px;
+  background-color: #18191a;
+  padding: 0px 32px;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  top: 73px;
+  height: 100vh;
+  margin: 0px;
+}
+.newstory{
+  padding: 8px 0px 24px;
+  width: 100%;
+  height: 221px;
+  display: flex;
+  flex: 1 1 0%;
+  position: relative;
+  color: #e4e6eb;
+  left: 0px;
+  margin: 15px 0px;
+}
+.newstory__create{
+  border-radius: 10px;
+  margin: 0px 4px;
+  width: 106px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: bold;
+  opacity: 0.9;
+  position: relative;
+  transition: 0.3s;
+}
+.newstory__create:hover{
+  opacity: 0.8;
+}
+.p1{
+  background: url(https://image.shutterstock.com/image-photo/portrait-surprised-cat-scottish-straight-260nw-499196506.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.p2{
+  background: url(https://cdn2.ettoday.net/images/4105/4105052.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.newstory__create_i{
+  font-size: 20px;
+  border-radius: 50%;
+  border: 4px solid #242526;
+  background-color: #2d89ff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 56px;
+  z-index: 5;
+} 
+.newstory__create__title{
+  height: 75px;
+  position: relative;
+  padding: 28px 16px 12px;
+  background-color: #242526;
+  font-size: 16px;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  z-index: 1;
+  
+  bottom: -1px;
+}
+.newstory__create__name{
+  font-size: 16px;
+  position: relative;
+  bottom: 9px;
+  left: -18px;
+}
+.newstory__create_img{
+  border:4px solid #2d89ff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.a2{
+  background-image: url(https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.newpost {
+  padding: 12px 16px 10px;
+  max-width: 680px;
+  width: 100%;
+  height: 124px;
+  position: relative;
+  border-radius: 10px;
+  background-color: rgb(36 37 38);
+  margin: 0px 4px;
+}
+.chat{
+  padding:8px 0px;
+}
+.newpost__top a{
+  display: flex;
+  align-items: center;
+}
+.newpost__top img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-position: top;
+  position: relative;
+  background-size: 70px;
+  margin: 6px;
+  object-fit: cover;
+}
+.newpost__top__title{
+  border-radius: 50px;
+  background-color: #3a3b3c;
+  padding: 11px 12px;
+  height: 41px;
+  width: 100%;
+}
+.newpost__bottom{
+  padding: 8px 0 0;
+  margin: 8px 0 0;
+  border-top: 1px solid #3a3b3c;
+  color: #b0b3b8;
+}
+.newpost__bottom{
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.newpost__bottom__wrap{
+  display: inline-flex;
+  align-self: center;
+  padding: 8px;
+  width: 100%;
+  justify-content: center;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.newpost__bottom__wrap:hover{
+  background-color: #3a3b3c;
+}
+.newpost__bottom__wrap>div{
+  padding-right: 7px;
+}
