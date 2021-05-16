@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>新拖延運動報名表單</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class=form>
+      <header>
+        <h1>新拖延運動報名表單</h1>
+        <p>活動日期：2020/12/10 ~ 2020/12/11
+          活動地點：台北市大安區新生南路二段1號
+        </p>
+        <p style="color: red;">*必填</p>
+      </header>
+      <main>
+        <div class=question>
+          <div class='block'>
+            <p>暱稱</p>
+            <input type="text" required>
+            <div  class=hidden style="visibility: hidden; color: red;">此為必填</div>
+          </div>
+          <div class='block'>
+            <p>電子郵件</p>
+            <input type="email" required>
+            <div  class=hidden style="visibility: hidden; color: red;">此為必填</div>
+          </div>
+          <div class='block'>
+            <p>手機號碼</p>
+            <input type="text" required>
+            <div  class=hidden style="visibility: hidden; color: red;">此為必填</div>
+          </div>
+          <div class='block radio'>
+            <p>報名類型</p>
+            <div class='block__choice'>
+              <input type="radio" name="sign_up_type" id='think' required>
+              <label for="think">躺在床上用想像力實作</label>
+            </div>
+            <div class='block__choice'> 
+              <input type="radio" name="sign_up_type" id='phone' required>
+              <label for="phone">趴在地上滑手機找現成的</label>
+            </div>
+            <div  class=hidden2 style="visibility: hidden; color: red;">此為必填</div>
+          </div>
+          <div class='block'>
+            <p>怎麼知道這個活動的？</p>
+            <input type="text" required>
+            <div  class=hidden style="visibility:hidden; color: red;">此為必填</div>
+          </div>
+          <div class='block'>
+            <p id='ans__other'>其他</p>
+            <input type="text" id='input_other'>
+            <div  class=hidden style="visibility: hidden; color: red;">此為必填</div>
+          </div>
+        </div>
+        <input class=form__submit type="submit" value="提交">
+        <p>請勿透過表單送出您的密碼。</p>
+      </main>
+    </div>
+    <script src="./indes.js"></script>
+  </body>
+</html>
