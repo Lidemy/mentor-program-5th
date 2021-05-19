@@ -1,0 +1,200 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 微軟正黑體;
+
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  box-shadow: 0px 2px 0px 0px rgba(224,217,224,0.71);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  width: 100%;
+}
+nav.navbar__button--wrap {
+    padding: 10px;
+    display: flex;
+}
+.navbar__button{
+  width: 120px;
+  height: 45px;
+  text-align: center;
+  margin: 10px 5px;
+  padding-top: 10px;
+  border-radius: 8px;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+.navbar__button:hover{
+  background-color: #ff7286;
+  color: white;
+}
+
+.pink {
+background-color: #ff7286;
+color: white;
+}
+
+h2.navbar__title {
+  color: #489845;
+  font-family: system-ui;
+  margin: 15px;
+  font-size: 36px;
+}
+main.content {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+}
+h1.content__header {
+  height: 500px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  margin: 30px;
+  justify-content: center;
+  background-color: black;
+  position: relative;
+  font-size: xxx-large;
+  font-weight: 800;
+}
+h1.content__header::after {
+  content: "";
+  justify-items: space-around;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  opacity: 75%;
+  background-image: url(https://walnuts.org/wp-content/uploads/2017/06/spinach-strawberry-salad-900x600.jpg);
+}
+h2.content__title {
+  position: relative;
+  align-self: center;
+}
+h2.content__title::before{
+  content: "";
+  background-color: #a7dca6;
+  width: 10px;
+  height: 22px;
+  position: absolute;
+  left: -15px;
+  top: 9px;
+}
+.content__info {
+  align-self: center;
+  text-align: center;
+  white-space: pre-line;
+  font-size: 16px;
+  width: 80%;
+  justify-content: center;
+  line-height: 1.5;
+}
+.content__button--wrap {
+  display: flex;
+  justify-content: center;
+}
+.content__button {
+  width: 304px;
+  height: 161px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 60px 80px;
+  font-size: 36px;
+  color: #3e613d;
+  margin: 70px 15px;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+.content__button:hover{
+  transform: scale(1.03);
+}
+.green{
+  background-color: #a8e8e1;
+}
+.yellow{
+  background-color:#f9f9b5
+}
+.content__pic > img {
+  width: 25%;
+  margin: 35px 0px;
+}
+.content__map {
+  margin-top: 35px;
+  margin-bottom: 10px;
+}
+footer.footer {
+  display: flex;
+  white-space: break-spaces;
+  justify-content: space-between;
+  background: #e8efee;
+  margin: 35px 0 0 0;
+}
+
+.footer__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 30px;
+}
+.footer__info {
+  line-height: 1.5;
+  color: #484848;
+}
+
+h2.footer__title--name{
+  color: #489845;
+  font-family: system-ui;
+  font-size: 36px;
+  line-height: 0;
+  left: -36px;
+  position: relative;
+}
+.footer__title--sns{
+  color: #484848
+}
+.footer__copyright {
+  text-align: center;
+  color: white;
+  background: #35564b;
+}
+.Q{
+  color:#70b282;
+  font-size: 24px;
+  margin: 0 16px 0 0;
+}
+.Q__title{
+  font-size: 18px;
+}
+.ans{
+  font-size: 18px;
+  margin: 20px;
+  display: none;
+}
+.Q__wrap{
+  border-bottom: solid 1px #a6e2c0;
+  padding: 18px 0;
+}
+.Ques{
+  padding:15px
+}
+.content.QA{
+  width: 70vw;
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+}
+.show{
+  display: flex !important;
+}
