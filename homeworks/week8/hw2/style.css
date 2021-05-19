@@ -44,7 +44,6 @@ main {
 font-size: 22px;
 }
 .vedio__pic{
-  background-color: darkcyan;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -83,4 +82,17 @@ font-size: 22px;
 }
 .block:hover{
   transform: scale(1.1);
+}
+.more{
+  font-size: 18px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+.more:hover{
+  color: #271b3f;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
