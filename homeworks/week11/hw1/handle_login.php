@@ -1,0 +1,26 @@
+<?php
+  session_start();
+  require_once('../conn.php');
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  if(empty($username) || empty($password)){
+    header('Location: login.php?errCode=1');
+    die('資料輸入不全');
+  }
+  $stmt = $conn->prepare("SELECT `password` FROM `users` WHERE `username`= ?");
+  $stmt->bind_param('s', $username);
+  $result = $stmt->execute();
+  if(!$result){
+    die($conn->error);
+  }
+  $result = $stmt->get_result()->fetch_assoc()['password'];
+  
+
+  if (password_verify($password, $result)){
+    $_SESSION['username'] = $username;
+    header('Location: index.php');
+  } else {
+    header('Location: login.php?errCode=2');
+  }
+
+?>
