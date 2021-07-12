@@ -1,30 +1,28 @@
-var readline = require('readline');
-var rl = readline.createInterface({
+const readline = require('readline')
+
+const rl = readline.createInterface({
   input: process.stdin
-});
+})
 
-var lines = []
+const lines = []
 
-rl.on('line', function (line) {
+rl.on('line', (line) => {
   lines.push(line)
-});
+})
 
-
-rl.on('close', function() {
+rl.on('close', () => {
   solve(lines)
 })
 
-
-function solve(lines){
-	let str = lines[0];
+function solve(lines) {
+  const str = lines[0]
   let newStr = ''
-  for(let i=str.length-1 ; i>=0; i--){
+  for (let i = str.length - 1; i >= 0; i--) {
     newStr += str[i]
   }
-  if(str==newStr){
+  if (str === newStr) {
     console.log('True')
-  }
-  else{
+  } else {
     console.log('False')
   }
 }

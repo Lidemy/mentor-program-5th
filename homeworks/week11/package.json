@@ -1,0 +1,21 @@
+{
+  "name": "week11",
+  "version": "1.0.0",
+  "description": "## hw1：完成並加強留言板",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^5.2.6",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "sass-loader": "^12.0.0",
+    "style-loader": "^2.0.0"
+  }
+}

@@ -1,0 +1,9 @@
+.bi-pencil-square{
+  font-size: 24px;
+  opacity: 0.7;
+  transition: 0.1s;
+  background-color: transparent;
+}
+.bi-pencil-square:hover{
+  opacity: 1;
+}

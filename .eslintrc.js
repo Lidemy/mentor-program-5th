@@ -8,7 +8,9 @@ module.exports = {
   extends: '@lidemy/eslint-config-lidemy',
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
+    SharedArrayBuffer: 'readonly',
+    $: 'readonly',
+    request: 'readonly'
   },
   parserOptions: {
     ecmaFeatures: {
@@ -18,5 +20,6 @@ module.exports = {
   },
   rules: {
     'no-console': 'off'
-  }
+  },
+  ignorePatterns: ['**/dist/*']
 }

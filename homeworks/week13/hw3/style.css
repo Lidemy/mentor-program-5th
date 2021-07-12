@@ -1,0 +1,98 @@
+*{
+  font-family: sans-serif;
+  text-decoration: none;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  color: #271b3f;
+}
+.games{
+  display: flex;
+}
+.gameName {
+  padding: 15px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.gameName:hover{
+  color: white;
+  background-color: #271b3f;
+  border-radius: 5px;
+}
+nav>.title {
+  font-size: 32px;
+  font-weight: bold;
+}
+.stream {
+  font-size: 28px;
+  padding: 30px;
+  font-weight: bold;
+}
+nav{
+  padding: 10px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(https://cdn.kikinote.net/game/wp-content/uploads/2016/07/4dca2587a27bfef7159570c32fc7bd331468829352.jpg);
+  background-size: contain;
+  color: white;
+}
+.description{
+font-size: 22px;
+}
+.vedio__pic{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 5px;
+}
+.vedio__text {
+  padding: 5px;
+  overflow: hidden;
+}
+.block>img{
+  height: 170px;
+  width: 270px;
+  position: relative;
+  top: 5px;
+}
+.vedio__content{
+  display: flex;
+  background-color: #38393b;
+  width: 270px;
+  color: white;
+}
+.vedio {
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.vedio>a{
+  margin: 20px 40px;
+
+}
+.vedio__title, .vedio__streamer{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.block:hover{
+  transform: scale(1.1);
+}
+.more{
+  font-size: 18px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+.more:hover{
+  color: #271b3f;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
