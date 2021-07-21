@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>獎項管理</title>
+    <style>
+      * {
+        background-color: #1b1f22;
+        color: whitesmoke;
+      }
+      .mt-4{
+        background-color: #1b1f22;
+      }
+      .mt-4::after{
+        color: red;
+        content: attr(data-after);
+      }
+      .btn {
+        font-size: 10px;
+      }
+      .btn-close{
+        color: whitesmoke;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='mt-4' data-after=''>新增獎品</div>
+    <div>
+      <input class="form-control form-control-lg" type="text" placeholder="獎項" aria-label=".form-control-lg example">
+      <input class="form-control form-control-lg" type="text" placeholder="圖片網址" aria-label=".form-control-lg example">
+      <input class="form-control form-control-lg" type="number" placeholder="權重(僅能輸入正整數)" aria-label=".form-control-lg example">
+    </div>
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">獎項</th>
+          <th scope="col">圖片網址</th>
+          <th scope="col">權重</th>
+          <th scope="col">編輯</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal" aria-label="Close">關閉</button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="prize-name" class="col-form-label">獎項名稱</label>
+                    <input type="text" class="form-control" id="prize-name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pic-img" class="col-form-label">圖片網址</label>
+                    <textarea type="text" class="form-control" id="pic-img"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="weight" class="col-form-label">權重</label>
+                    <input type="text" class="form-control" id="weight">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-light edit-submit">修改</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./back.js"></script>
+    
+  </body>
+</html>
