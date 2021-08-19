@@ -32,7 +32,7 @@
   
   在實作以前可以搜尋關鍵字：「cursor based pagination」，或者是參考底下資料：
 
-1. [API做翻页的两种思路](https://www.cnblogs.com/cgzl/p/10706881.html)
+1. [API做翻页的两种思路](https://cloud.tencent.com/developer/article/1432953)
 2. [How to do Pagination?](https://b96016.gitlab.io/post/how-to-pagination/)
 3. [Pagination with Relative Cursors](https://engineering.shopify.com/blogs/engineering/pagination-relative-cursors)
 
