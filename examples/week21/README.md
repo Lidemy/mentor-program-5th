@@ -9,6 +9,26 @@
 )
 3. [HW2 五子棋](https://codesandbox.io/s/di-21-zhouwuziqi-h7j1t?file=/src/App.js)
 
+## 2021-08-29 補充
+
+有關於 React 的 state 改變，課程中應該有提過有兩種方式，一種是直接放新的值，另外一種是放一個 function，像下面這樣：
+
+``` js
+function App() {
+  const [counter, setCounter] = useState(1)
+  setCounter(counter + 1) // 第一種
+  setCounter(counter => counter + 1) // 第二種
+}
+```
+
+課程中有些範例會用第一種，就是直接寫新的值，雖然這樣用在大部分場合下都沒有問題，但其實不是太好的做法
+像是這種「你要更新的值與現在的 state 有關」的狀況，請大家用 functional update，也就是第二種
+
+所以如果是計數器，應該是 `setCounter(counter => counter + 1)` 比較對，而不是 `setCounter(counter + 1)`
+只要你想更新的值與現在的 state 有關，都應該使用 functional 的做法
+
+一些詳細原因可以看這篇：[關於 useState，你需要知道的事](https://medium.com/@xyz030206/%E9%97%9C%E6%96%BC-usestate-%E4%BD%A0%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B-5c8c4cdda82c)
+
 ## 關於 state 的改變
 
 這邊建議大家去找更多關於 React 裡面 useState 相關的文章，因為有些部分課程沒有仔細提到。
