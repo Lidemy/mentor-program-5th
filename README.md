@@ -57,6 +57,7 @@
 
 - [CMD101] Command Line 超新手入門
 - [GIT101] Git 超新手入門
+- [CS101] 初心者的計概與 coding 火球術（1-1、1-2、4-1、4-2、單元 11）
 
 這個禮拜的作業：[HW1](/homeworks/week1)
 
