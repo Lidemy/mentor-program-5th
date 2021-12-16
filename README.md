@@ -82,8 +82,8 @@
 
 #### 學習教材
 
-- [JS101] 用 JavaScript 一步步打造程式基礎
-- [ALG101] 先別急著寫 leetcode
+- [JS101] 用 JavaScript 一步步打造程式基礎（綜合練習 Lv1）
+- [ALG101] 先別急著寫 leetcode（Unit4）
 - [CS101] 初心者的計概與 coding 火球術（想複習演算法的話就看 7-1 ~ 7-4）
 
 這個禮拜的作業：[HW2](#/homeworks/week2)
