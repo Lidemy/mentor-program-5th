@@ -59,7 +59,7 @@
 - [GIT101] Git 超新手入門
 - [CS101] 初心者的計概與 coding 火球術（1-1、1-2、4-1、4-2、單元 11）
 
-這個禮拜的作業：[HW1](/homeworks/week1)
+這個禮拜的作業：[Week1](/homeworks/week1)
 
 #### 自我檢測
 
@@ -86,7 +86,7 @@
 - [ALG101] 先別急著寫 leetcode（Unit4）
 - [CS101] 初心者的計概與 coding 火球術（想複習演算法的話就看 7-1 ~ 7-4）
 
-這個禮拜的作業：[HW2](#/homeworks/week2)
+這個禮拜的作業：[Week2](#/homeworks/week2)
 
 #### 自我檢測
 
@@ -107,7 +107,7 @@
 
 - [JS102] 升級你的 JavaScript 技能：ES6 + npm + Jest
 
-這個禮拜的作業：[HW3](#/homeworks/week3)
+這個禮拜的作業：[Week3](#/homeworks/week3)
 
 #### 自我檢測
 
@@ -131,7 +131,7 @@
 - [NET101] 網路基礎概論（搭配 JS 實作練習）
 - [CS75 (Summer 2012)](https://www.youtube.com/watch?v=8KuO4r5CHjM)（有時間的話可以看）
 
-這個禮拜的作業：[HW4](#/homeworks/week4)
+這個禮拜的作業：[Week4](#/homeworks/week4)
 
 #### 自我檢測
 
@@ -161,7 +161,7 @@
 
 註：如果卡關的話可以搜尋「Lidemy HTTP Challenge」
 
-這個禮拜的作業：[HW5](#/homeworks/week5)
+這個禮拜的作業：[Week5](#/homeworks/week5)
 
 （如果進度非常順利，也順利拿到下週的網頁設計搞，那這週就可以開始切了。）
 
@@ -195,7 +195,7 @@
 
 [跟著小明一起搞懂技術名詞：MVC、SPA 與 SSR](https://hulitw.medium.com/introduction-mvc-spa-and-ssr-545c941669e9)
 
-這個禮拜的作業：[HW6](#/homeworks/week6)
+這個禮拜的作業：[Week6](#/homeworks/week6)
 
 #### 自我檢測
 
@@ -227,7 +227,7 @@
 [DOM 的事件傳遞機制：捕獲與冒泡](https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/)
 [Manage HTML DOM](https://htmldom.dev/)
 
-這個禮拜的作業：[HW7](/homeworks/week7)
+這個禮拜的作業：[Week7](/homeworks/week7)
 
 #### 自我檢測
 
@@ -254,7 +254,7 @@
 
 [輕鬆理解 Ajax 與跨來源請求](https://blog.techbridge.cc/2017/05/20/api-ajax-cors-and-jsonp/)
 
-這個禮拜的作業：[HW8](/homeworks/week8)
+這個禮拜的作業：[Week8](/homeworks/week8)
 
 #### 自我檢測
 
@@ -286,7 +286,7 @@
 [淺談 Session 與 Cookie：一起來讀 RFC](https://blog.huli.tw/2019/08/09/session-and-cookie-part2/)
 [深入 Session 與 Cookie：Express、PHP 與 Rails 的實作](https://github.com/aszx87410/blog/issues/46)
 
-這個禮拜的作業：[HW9](/homeworks/week9)
+這個禮拜的作業：[Week9](/homeworks/week9)
 
 #### 自我檢測
 
@@ -310,7 +310,7 @@
 1. 把 [綜合能力測驗](http://mentor-program.co/huli/game/index.php) 完成
 2. 把 [r3:0 異世界網站挑戰](https://r30challenge.herokuapp.com/) 完成
 
-這個禮拜的作業：[HW10](/homeworks/week10)
+這個禮拜的作業：[Week10](/homeworks/week10)
 
 ### 第十一週（02/14 ~ 02/20）：被遺忘很久的資訊安全
 
@@ -326,7 +326,7 @@
 [程式導師實驗計畫第二期：Week6-2：資訊安全](https://www.youtube.com/watch?v=HGjjxKsCgr0)
 [讓我們來談談 CSRF](https://blog.techbridge.cc/2017/02/25/csrf-introduction/)（有時間的話，試著去理解 CSRF 是什麼？）
 
-這個禮拜的作業：[HW11](/homeworks/week11)
+這個禮拜的作業：[Week11](/homeworks/week11)
 
 （感覺會花挺多時間來研究的，希望能在時間內完成。）
 
@@ -353,7 +353,7 @@
 - [BE101] 用 PHP 與 MySQL 學習後端基礎（看「真正的實戰：留言板 - API 篇」）
 - [FE201] 前端中階：那些前端會用到的工具們（看 jQuery 和 Bootstrap 就好）
 
-這個禮拜的作業：[HW12](/homeworks/week12)
+這個禮拜的作業：[Week12](/homeworks/week12)
 
 （根據課綱說明，作業一會需要參考 MTR04 的教學影片。如果沒有辦法取得的話，就盡量靠自己的力量來完成吧）
 
@@ -401,7 +401,7 @@
 [Fetch 與 Promise 補充系列（四）：淺談 Promise](https://www.youtube.com/watch?v=w-gnunN1Ra4)
 [Fetch 與 Promise 補充系列（五）：async 與 await](https://www.youtube.com/watch?v=OEWoF9zzGAU)
 
-這個禮拜的作業：[HW13](/homeworks/week13)
+這個禮拜的作業：[Week13](/homeworks/week13)
 
 （根據課綱說明，作業二會需要參考 MTR05 的教學影片。如果沒有辦法取得的話，就盡量靠自己的力量來完成吧。（雖然感覺這難度好像頗高，但盡可能試試看囉。））
 
@@ -423,7 +423,7 @@
 
 這一週要部署自己的之前寫的 PHP 網站了，可能會比較複雜，但還是盡量先自己上網研究看看能不能搞出來，如果真的遇到問題就直接參考 [這裡](https://github.com/Lidemy/mentor-program-5th#%E7%AC%AC%E5%8D%81%E5%9B%9B%E9%80%B10712--0718%E4%BC%BA%E6%9C%8D%E5%99%A8%E8%88%87%E7%B6%B2%E7%AB%99%E9%83%A8%E7%BD%B2) 吧。（太多連結我懶得貼了）
 
-這個禮拜的作業：[HW14](/homeworks/week14)
+這個禮拜的作業：[Week14](/homeworks/week14)
 
 （這次的作業有蠻多我不懂的專有名詞的，希望自己不會卡太久...）
 
@@ -455,7 +455,7 @@
    - [中譯版](https://juejin.cn/post/6844903679389073415)，其他 part 直接搜尋就好
    - 上面看完後可以看 huli 的導讀：[瀏覽器運作導讀](https://www.youtube.com/watch?v=5iaNYpVedIU&t=2432s)
 
-這個禮拜的作業：[HW15](/homeworks/week15)
+這個禮拜的作業：[Week15](/homeworks/week15)
 
 ### 第十六週（03/20 ~ 03/26）：JavaScript 核心與物件導向
 
@@ -477,7 +477,7 @@
 - [程式導師實驗計畫第二期：Week5-2：物件導向程式設計](https://www.youtube.com/watch?v=nZhzLcV9eHI)
 - [Week5 物件導向（續）：繼承與 static](https://www.youtube.com/watch?v=k5TGAw7faNg)
 
-這個禮拜的作業：[HW16](/homeworks/week16)
+這個禮拜的作業：[Week16](/homeworks/week16)
 
 #### 自我檢測
 
@@ -503,7 +503,7 @@
 
 - [BE201] 後端中階：Express 與 Sequelize
 
-這個禮拜的作業：[HW17](/homeworks/week17)
+這個禮拜的作業：[Week17](/homeworks/week17)
 
 #### 自我檢測
 
@@ -530,7 +530,7 @@
 
 - [BE201] 後端中階：Express 與 Sequelize
 
-這個禮拜的作業：[HW18](/homeworks/week18)
+這個禮拜的作業：[Week18](/homeworks/week18)
 
 （非常 cool 的作業，但也覺得自己大概會搞很久。）
 
@@ -549,13 +549,13 @@
 
 所以這一週可以複習前面沒弄清楚的東西，或者是先跑之後 React 的內容。
 
-這個禮拜的作業：[HW19](/homeworks/week19)
+這個禮拜的作業：[Week19](/homeworks/week19)
 
 ### 第二十週（04/17 ~ 04/23）：複習週
 
 最後一次的複習週。你可以完成這個 [測驗](https://github.com/Lidemy/mentor-program-5th#%E7%AC%AC%E4%BA%8C%E5%8D%81%E9%80%B10823--0829%E8%A4%87%E7%BF%92%E9%80%B1)，或是根據當時的進度做安排。
 
-這個禮拜的作業：[HW20](/homeworks/week20)
+這個禮拜的作業：[Week20](/homeworks/week20)
 
 ### 第二十一週 至 第二十四週（04/24 ~ 5/26）：React 基礎
 
@@ -596,10 +596,10 @@
 
 #### 這幾週的作業：
 
-- [HW21](/homeworks/week21)
-- [HW22](/homeworks/week22)
-- [HW23](/homeworks/week23)
-- [HW24](/homeworks/week24)
+- [Week21](/homeworks/week21)
+- [Week22](/homeworks/week22)
+- [Week23](/homeworks/week23)
+- [Week24](/homeworks/week24)
 
 ### Final Project
 
