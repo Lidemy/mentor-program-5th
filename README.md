@@ -179,18 +179,16 @@
 
 #### 自我檢測
 
-- [ ] 你知道 HTML 是在做什麼的
-- [ ] 你知道如何使用有語意的（semantic）標籤
-- [ ] 你知道基本 SEO 的概念
-- [ ] 你知道 CSS 是什麼
-- [ ] 你知道 inline、block 跟 inline-block 的區別
-- [ ] 你知道什麼是 box model
-- [ ] 你知道 position 的所有屬性及其差別
-- [ ] 你知道 :hover, :before, :after
-- [ ] 你知道 :nth-child 的各種用法
-- [ ] 你熟悉 CSS selector，可以輕鬆選到想選到的元素
-
-把答案寫在這裡：
+- [x] 你知道 HTML 是在做什麼的
+- [x] 你知道如何使用有語意的（semantic）標籤
+- [x] 你知道基本 SEO 的概念
+- [x] 你知道 CSS 是什麼
+- [x] 你知道 inline、block 跟 inline-block 的區別
+- [x] 你知道什麼是 box model
+- [x] 你知道 position 的所有屬性及其差別
+- [x] 你知道 :hover, :before, :after
+- [x] 你知道 :nth-child 的各種用法
+- [x] 你熟悉 CSS selector，可以輕鬆選到想選到的元素
 
 ### 第七週（01/24 ~ 01/30）：香草口味的 JavaScript
 
@@ -211,16 +209,15 @@
 
 #### 自我檢測
 
-- [ ] 你知道 JavaScript 跑在網頁上跟跑在 Node.js 上差在哪裡
-- [ ] 你知道 DOM 是什麼
-- [ ] 你知道如何用 JavaScript 操控 DOM 物件
-- [ ] 你知道如何幫一個按鈕加上 event listener
-- [ ] 你知道捕獲與冒泡是什麼
-- [ ] 你知道什麼是事件代理（delegation）
-- [ ] 你知道怎麼用 JavaScript 更改元素的 style
-- [ ] 你知道 preventDefault 與 stopPropagation 的差異
+- [x] 你知道 JavaScript 跑在網頁上跟跑在 Node.js 上差在哪裡
+- [x] 你知道 DOM 是什麼
+- [x] 你知道如何用 JavaScript 操控 DOM 物件
+- [x] 你知道如何幫一個按鈕加上 event listener
+- [x] 你知道捕獲與冒泡是什麼
+- [x] 你知道什麼是事件代理（delegation）
+- [x] 你知道怎麼用 JavaScript 更改元素的 style
+- [x] 你知道 preventDefault 與 stopPropagation 的差異
 
-把答案寫在這裡：
 
 ### 第八週（01/31 ~ 02/06）：API I I 不完
 
