@@ -266,16 +266,15 @@
 
 #### 自我檢測
 
-- [ ] 你知道 PHP 是什麼
-- [ ] 你知道前端與後端的差別
-- [ ] 你知道什麼是資料庫
-- [ ] 你了解基本的 SQL 語法，包括 Select、Insert Into、Delete 與 Update
-- [ ] 你能夠寫出基本的 CRUD 應用
-- [ ] 你知道什麼是 Session
-- [ ] 你知道什麼是 Cookie
-- [ ] 你知道 Session 與 Cookie 的差別
+- [x] 你知道 PHP 是什麼
+- [x] 你知道前端與後端的差別
+- [x] 你知道什麼是資料庫
+- [x] 你了解基本的 SQL 語法，包括 Select、Insert Into、Delete 與 Update
+- [x] 你能夠寫出基本的 CRUD 應用
+- [x] 你知道什麼是 Session
+- [x] 你知道什麼是 Cookie
+- [x] 你知道 Session 與 Cookie 的差別
 
-把答案寫在這裡：
 
 ### 第十週（02/14 ~ 02/20）：複習週
 
