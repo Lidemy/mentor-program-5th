@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPA 留言板</title>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- stylesheet -->
+  <style>
+    body {
+      background-color: #ffe2646b;
+      padding: 50px 0;
+    }
+    .board {
+      max-width: 600px;
+      padding: 10px 20px;
+      margin: auto;
+    }
+    .card {
+      background-color: #ffbf5475;
+    }
+    .card-title {
+      max-width: 14em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    @media screen and (max-width: 768px) {
+      .card-title {
+      max-width: 5em;
+      }
+    }
+    .avatar {
+      width: 90px;
+    }
+    img {
+      width: 74px !important;
+      height: 74px !important;
+      object-fit: cover;
+      object-position: center;
+    }
+
+  </style>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+  <script>
+    const BASE_URL = 'http://localhost/peanu/message-board-spa';
+    //  loading 效果
+    $.LoadingOverlaySetup({
+      background: "rgba(0, 0, 0, 0.6)",
+      imageAnimation: false,
+      image: './spinner.svg',
+      imageColor: '#FFD369',
+      size: '50'
+    });
+
+    jQuery(document).ready(() => {
+      // 開啟 loading
+      $.LoadingOverlay('show');
+      // 進到頁面的初始設定
+      const limit = 5;
+      let page = 1;
+      let offset = (page-1) * limit;
+      let isLastPage = false;
+
+      // 載入留言
+      getComments(limit, offset, (err, data) => {
+        if (err) {
+          alert('抓留言失敗');
+          return
+        }
+        const { comments } = data;
+        // 低於 5 筆
+        if (comments.length < limit) {
+          // 更新狀態
+          isLastPage = true;
+          // 按鈕藏起來
+          $('.show-more').hide();
+        }
+        // 渲染
+        for (const comment of comments) {
+          renderComments(comment);
+        }
+        // 關閉 loading
+        $.LoadingOverlay('hide');
+      });
+      
+      // 點擊顯示更多按鈕
+      $('.show-more button').bind('click', () => {
+        // 防止 user 自己把 disabled 拿掉再點按鈕
+        if (isLastPage) {
+          return;
+        }
+        // 開啟 loading
+        $.LoadingOverlay('show');
+        // 下一頁
+        page++;
+        // 更新要略過幾筆資料
+        offset = (page-1) * limit;
+        // 往下抓留言
+        getComments(limit, offset, (err, data) => {
+          if (err) {
+            alert('往下抓留言失敗');
+            return
+          }
+          const { comments } = data;
+          // 到底了（注意不是 <= ，只有 < 才能確定後面沒資料了）
+          if (comments.length < limit) {
+            // 更新狀態
+            isLastPage = true;
+            // 更新按鈕
+            $('.show-more button')
+              .text('沒有更多留言了')
+              .prop('disabled', true);
+          }
+          // 渲染 DOM
+          for (const comment of comments) {
+            renderComments(comment);
+          }
+          // 關閉 loading
+          $.LoadingOverlay('hide');
+        });
+      });
+
+      // 新增留言
+      $('.form').bind('submit', (e) => {
+        // 開啟 loading
+        $.LoadingOverlay('show');
+        // 阻止預設行為
+        e.preventDefault();
+        // 儲存表單的內容
+        const formData = new FormData(e.target);
+        // 清除輸入文字
+        $('input[name=nickname]').val('');
+        $('input[name=avatar]').val('');
+        $('textarea').val('');
+        // 送出 request
+        addComments(formData, (err, res) => {
+          // 失敗
+          if (err) {
+            alert(err.responseJSON.message);
+            // 關閉 loading
+            $.LoadingOverlay('hide');
+            return;
+          }
+          // 新增成功，先初始化再重抓留言
+          offset = 0;
+          page = 1;
+          isLastPage = false;
+          $('.show-more button')
+            .text('顯示更多')
+            .prop('disabled', false);
+          // 送出 request
+          getComments(limit, offset, (err, data) => {
+            // 失敗
+            if (err) {
+              alert('抓留言失敗');
+              return
+            }
+            // 成功
+            const { comments } = data;
+            // 低於 5 筆
+            if (comments.length < limit) {
+              // 把按鈕藏起來
+              $('.show-more').hide();
+              // 更新狀態
+              isLastPage = true;
+            }
+            // 清空所有留言
+            $('.comments').empty();
+            for (const comment of comments) {
+              renderComments(comment);
+            }
+            // 關閉 loading
+            $.LoadingOverlay('hide');
+          });
+        });
+      });
+    });
+
+    // 新增留言
+    function addComments (data, callback) {
+      $.ajax({
+        'url': `${BASE_URL}/api_add_comment.php`,
+        'type': 'POST',
+        'data': data,
+        'contentType': false, //required
+        'processData': false, // required
+        success: (data) => callback(null, data),
+        error: (err) => callback(err)
+      })
+      
+    }
+    // 取得留言
+    function getComments (limit, offset, callback) {
+      $.ajax({
+        'url': `${BASE_URL}/api_comments.php?limit=${limit}&offset=${offset}`,
+        'type': 'GET',
+        success: (data) => callback(null, data),
+        error: (err) => callback(err)
+      })
+    }
+    // 渲染 DOM
+    function renderComments (comment) {
+      const template = `
+      <div class="card mb-3 border-0 rounded-3">
+        <div class="row flex-nowrap g-0">
+          <div class="avatar p-2">
+            <img src="${escape(comment.avatar)}" class="img-fluid rounded-circle overflow-hidden" alt="avatar">
+          </div>
+          <div class="content flex-grow-1 flex-shrink-1">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">${escape(comment.nickname)}</h5>
+              <p class="card-text text-break">${escape(comment.message)}</p>
+              <p class="card-text"><small class="text-muted">${escape(comment.created_at)}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      `;
+      $('.comments').append(template);
+    }
+    // 字元跳脫
+    function escape (unsafe) {
+      return unsafe
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/'/g, '&#039;')
+        .replace(/"/g, '&quot;')
+    }
+  </script>
+</head>
+<body>
+
+  <main class="board">
+    <h1 class="mb-3 fw-bold">Comments</h1>
+    <!-- 表單 -->
+    <form class="form mb-5" method="POST" action="handle_add_commit.php">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">大頭貼（可選）
+        </label>
+        <input type="text" name="avatar" class="form-control" id="exampleFormControlInput1" placeholder="請填圖片網址">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">暱稱</label>
+        <input type="text" name="nickname" class="form-control" id="exampleFormControlInput1" placeholder="PeaNu">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">留言內容</label>
+        <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="花生醬最棒了..."></textarea>
+      </div>
+      <div class="text-end">
+        <button class="btn btn-warning">送出</button>
+      </div>
+    </form>
+    <!-- 所有留言 -->
+    <div class="comments"></div>
+    <!-- 按鈕 -->
+    <div class="show-more text-center mt-5">
+      <button class="btn btn-warning">顯示更多</button>
+    </div>
+  </main>
+  
+  
+</body>
+</html>
