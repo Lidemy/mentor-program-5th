@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    /* customized bootstrap class */
+    .container-fluid {
+      max-width: 720px;
+    }
+    .form-check-input {
+      position: relative;
+      top: -1.5px;
+      width: 1.3em;
+      height: 1.3em;
+      border-color: #d2d8ff;
+      align-self: center;
+    }
+    .form-check-label {
+      max-width: 8em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    /* my style */
+    html, body {
+      height: 100%;
+    }
+    body {
+      padding: 60px 20px;
+      background-color: #FECEB0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    li {
+      list-style: none;
+    }
+    button {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+    .hide {
+      display: none !important;
+    }
+    .todo {
+      color: #6B7DFF;
+      background-color: white;
+      box-shadow: 4px 4px 21px #0000003b;
+    }
+    .todo__header button {
+      color: #6B7DFF;
+    }
+    .todo__list {
+      height: calc(100vh - 285px);
+      padding: 20px;
+      overflow-y: auto;
+      scrollbar-gutter: stable;
+    }
+    .todo__list::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+      background-color: transparent;
+    }
+    .todo__list::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent;
+    }
+    .todo__list::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #6B7DFF;
+    }
+    .todo__list li ~ li{
+      margin-top: 20px;
+    }
+    .line {
+      background-color: #eff1ff;
+      height: 2px;
+    }
+    .submit-button,
+    .edit-button,
+    .delete-button {
+      text-align: center;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2em;
+      line-height: 40px;
+      color: #6B7DFF;
+    }
+    .edit-button,
+    .delete-button {
+      position: relative;
+      top: -3px;
+    }
+    .filter-buttons {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+    .filter-buttons button {
+      color: #6B7DFF;
+    }
+    .filter-buttons button.current {
+      color: #FECEB0;
+    }
+    
+    /* media query */
+    @media screen and (min-width: 576px) {
+      .form-check-label {
+        max-width: 20em;
+      }
+      .filter-buttons {
+        display: block;
+        width: auto;
+      }
+    }
+    @media (hover: hover) {
+      .submit-button:hover,
+      .edit-button:hover,
+      .delete-button:hover,
+      .filter-button:hover,
+      .todo__header button:hover {
+        color: #FECEB0;
+      }
+    }
+    /* tooltips */
+    @keyframes tooltips-vert {
+      to {
+        opacity: 0.9;
+        transform: translate(-50%, 0);
+      }
+    }
+    [tooltip] {
+      position: relative;
+    }
+    [tooltip]::before,
+    [tooltip]::after {
+      font-size: 0.9em;
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+      position: absolute;
+      opacity: 0;
+      animation: tooltips-vert 300ms ease-out forwards;
+    }
+    [tooltip]::before {
+      content: "";
+      border: 5px solid transparent;
+      z-index: 1001;
+    }
+    [tooltip]::after {
+      content: attr(tooltip);
+      font-family: Helvetica, sans-serif;
+      text-align: center;
+      min-width: 3em;
+      max-width: 21em;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding: 1ch 1.5ch;
+      border-radius: 0.3ch;
+      box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+      background-color: #333;
+      color: #fff;
+      z-index: 1000;
+    }
+    [tooltip]::before {
+      top: 100%;
+      border-top-width: 0;
+      border-bottom-color: #333;
+    }
+    [tooltip]::after {
+      top: calc(100% + 5px);
+    }
+    [tooltip]::before,
+    [tooltip]::after {
+      left: 50%;
+      transform: translate(-50%, 0.5em);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="todo container-fluid p-0">
+    <!-- header -->
+    <div class="todo__header">
+      <form class="p-3 d-flex align-items-center">
+        <div class="w-100">
+          <input class="form__input form-control border-0 rounded-0" type="text" placeholder="Write some thing..." aria-label="default input example">
+        </div>
+        <button class="submit-button fas fa-play"></button>
+      </form>
+      <div class="d-flex justify-content-end px-3 pb-2">
+        <button class="save-button">
+          <i class="fas fa-database"></i>
+          <span class="ms-1 fw-bold">Save</span>
+        </button>
+        <button class="clear-button ms-3">
+          <i class="fas fa-minus-circle"></i>
+          <span class="ms-1 fw-bold">Clear</span>
+        </button>
+      </div>
+    </div>
+    <div class="line"></div>
+    <!-- main -->
+    <ul class="todo__list"></ul>
+    <div class="line"></div>
+    <!-- footer -->
+    <div class="todo__footer p-4 d-flex fw-bold">
+      <div class="text-uppercase me-auto d-none d-sm-block"><span class="task-counter"></span> Tasks</div>
+      <div class="filter-buttons">
+        <button class="all-button current fw-bold px-2">All</button>
+        <button class="active-button fw-bold px-2">Active</button>
+        <button class="completed-button fw-bold px-2">Completed</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- moments.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script>
+    let id = 1;
+    let todos = [];
+    let isOnEdit = false;
+    const $form = $('form');
+    const $list = $('.todo__list');
+    const $allButton = $('.all-button');
+    const $saveButton = $('.save-button');
+    const $clearButton = $('.clear-button');
+    const $activeButton = $('.active-button');
+    const $completedButton = $('.completed-button');
+    const template = 
+    `<li>
+      <div class="todo-wrap d-flex align-items-center">
+        <div class="todo-check form-check d-flex align-items-center me-auto">
+          <input class="form-check-input rounded-0 flex-shrink-0" type="checkbox" id="$todoId" $isCompleted>
+          <label class="form-check-label ms-3 fw-bold" for="$todoId">$todoName</label>
+        </div>
+        <div class="todo-edit-and-delete flex-shrink-0">
+          <button class="edit-button fas fa-edit"></button>
+          <button class="delete-button fas fa-trash-alt"></button>
+        </div>
+      </div>
+    </li>`;
+
+    // 設定時間語系
+    moment.locale('zh_cn');
+    // 任務數量 
+    $('.task-counter').text(todos.length);
+
+    // 檢查有沒有帶 id
+    if (document.location.search.includes('?id=')) {
+      const todoId = document.location.search.split('?id=').join('');
+      $.ajax({
+        url: `http://localhost/peanu/todo-list/api_todos.php?id=${todoId}`,
+        type: 'GET',
+        dataType: 'json',
+        success: res => {
+          // 把回傳的 todo 儲存
+          todos = res;
+          // 更新 id 初始值
+          id = todos[todos.length-1].id + 1;
+          // 渲染 todo
+          renderTodos(todos);
+        },
+        error: err => alert(err)
+      })
+    }
+
+    /*
+      $allButton: 點擊 All
+      $activeButton: 點擊 Active
+      $completedButton: 點擊 Completed
+      $clearButton: 點擊 Clear
+      $saveButton? 點擊 Save
+    */
+    $allButton.on('click', (e) => {
+      // 不可以重複點擊
+      if ($(e.target).hasClass('current')) {
+        return;
+      }
+      changeCurrentButton($allButton);
+      // 渲染 todos
+      renderTodos(todos);
+    });
+    $activeButton.on('click', (e) => {
+      // 不可以重複點擊
+      if ($(e.target).hasClass('current')) {
+        return;
+      }
+      changeCurrentButton($activeButton);
+      const activeTodos = todos.filter(elem => !elem.isCompleted);
+      // 渲染 todos
+      renderTodos(activeTodos);
+    });
+    $completedButton.on('click', (e) => {
+      // 不可以重複點擊
+      if ($(e.target).hasClass('current')) {
+        return;
+      }
+      changeCurrentButton($completedButton);
+      const completedTodos = todos.filter(elem => elem.isCompleted);
+      // 渲染 todos
+      renderTodos(completedTodos);
+    });
+    $clearButton.on('click', (e) => {
+      // 已經清空就別再點啦
+      if (!todos.length) {
+        return;
+      }
+      // 清除 todo 資料
+      todos = [];
+      // 畫面清空
+      $list.children().fadeOut(400, (e) => {
+        $list.empty();
+      })
+    });
+    $saveButton.on('click', (e) => {
+      // 沒東西的話不給存
+      if (!todos.length) {
+        // 顯示 tooltip
+        $saveButton.attr('tooltip', '請確認有東西再儲存哦！');
+        // 一秒後清除 tooltip
+        setTimeout(() => $saveButton.removeAttr('tooltip'), 1000);
+        return;
+      }
+      // 發出儲存 todo 的 request
+      $.ajax({
+        url: 'http://localhost/peanu/todo-list/api_save_todo.php',
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        // 要記得 stringify
+        data: JSON.stringify(todos),
+        success: res => {
+          // 提示訊息
+          alert(`新增成功，您的 todo id 為 ${res.id}`)
+          // 帶上 id 重新整理
+          document.location.href = `http://localhost/peanu/todo-list/index.html?id=${res.id}`;
+        },
+        error: err => alert(err.responseJSON.message)
+      })
+    });
+
+    // 輸入內容
+    $form.on('submit', (e) => {
+      // 停止預設行為
+      e.preventDefault();
+      // 編輯狀態不可新增
+      if (isOnEdit) {
+        return;
+      }
+      // 新增 todo
+      addTodo(e);
+    });
+
+    // 勾選 checkbox
+    $list.on('change', '.form-check-input', (e) => {
+      // 取得 todo id
+      const itemId = $(e.target).attr('id') * 1;
+      // 找出要改的 todo 索引值
+      const targetIndex = todos.findIndex(elem => elem.id === itemId);
+      // 更新資料
+      todos[targetIndex].isCompleted = e.target.checked;
+    })
+
+    // 按刪除按鈕
+    $list.on('click', '.delete-button', (e) => {
+      // 編輯狀態不可刪除
+      if (isOnEdit) {
+        return;
+      }
+      // 刪除 todo
+      removeTodo(e);
+    })
+
+    // 按編輯按鈕
+    $list.on('click', '.edit-button', (e) => {
+      // 不可同時編輯兩個 todo
+      if (isOnEdit) {
+        return;
+      }
+      // 編輯 todo
+      editTodo(e);
+    })
+    // 新增 todo
+    function addTodo (e) {
+      // 內容空白的話顯示 tooltip
+      if ($(e.target).find('input').val() === '') {
+        return $(e.target).find('div').attr('tooltip', '請輸入內容');
+      }
+      // 清除 tooltip
+      $(e.target).find('div').removeAttr('tooltip');
+      // 取得輸入
+      const value = $(e.target).find('input').val().trim();
+      // 清除輸入
+      $(e.target).find('input').val('');
+      // 新增 todo 資料
+      todos.push({
+        name: value,
+        id: id,
+        created_at: moment().format('llll'),
+        isCompleted: false
+      });
+      // 更新任務數量
+      $('.task-counter').text(todos.length);
+      // DOM
+      const newTodo = 
+      template
+        .replace('$todoId', id)
+        .replace('$isCompleted', '')
+        .replace('$todoId', id)
+        .replace('$todoName', escapeHTML(value));
+      // 渲染 DOM
+      $list.prepend(newTodo);
+      // 動畫效果，先隱藏在淡入
+      $list.find('li:first-child').hide();
+      $list.find('li:first-child').fadeIn(400);
+      // id 遞增
+      id++
+    }
+    // 刪除 todo
+    function removeTodo (e) {
+      // 找到 todo 的 id（注意型態）
+      const itemId = $(e.target).closest('li').find('input').attr('id') * 1; 
+      // 用 id 去找出資料位置，然後刪除
+      todos.splice(todos.findIndex(elem => elem.id === itemId), 1);
+      // 更新任務數量
+      $('.task-counter').text(todos.length);
+      // 動畫效果，先淡出再移除
+      $(e.target).closest('li').fadeOut(400, () => {
+        $(e.target).closest('li').remove();
+      });
+    }
+    // 編輯 todo
+    function editTodo (e) {
+      // 進入編輯狀態
+      isOnEdit = true;
+      // 取得 li
+      const $li = $(e.target).closest('li');
+      // 原本的內容
+      const originalText = $li.find('label').text();
+      // 刪除的元素
+      const $removedElement = $li.children().remove();
+      // 蹦一個新的元素讓 user 輸入
+      const $div = $('<div>');
+      const $input = $('<input>', {
+        class: 'form-control border-0 rounded-0',
+        type: 'text',
+        value: originalText
+      });
+      // 輸入內容後的處理
+      $input.on('keyup', (e) => {
+        const value = e.target.value;
+        if (e.key === 'Enter' || e.key === 'Escape') {
+          // 輸入空值不給過，顯示 tooltip
+          if (value === '') {
+            return $(e.target).parent().attr('tooltip', '請輸入內容');
+          }
+          // 移除 tooltip
+          $(e.target).parent().removeAttr('tooltip');
+          // 找到 todo 的 id（注意型態）
+          const itemId = $removedElement.find('input').attr('id') * 1; 
+          // 找出要改的那一筆 todo 
+          const targetIndex = todos.findIndex(elem => elem.id === itemId);
+          // 更新資料
+          todos[targetIndex].name = value;
+          // 更新內容
+          $removedElement.find('label').text(value.trim());
+          // 移除自己
+          $(e.target).parent().remove();
+          $removedElement.appendTo($li);
+          // 退出編輯模式
+          isOnEdit = false;
+        }
+      })
+      // 插到 DOM
+      $li.append($div.append($input));
+      // 聚焦到輸入框
+      $input.focus();
+    }
+    // 渲染 todos
+    function renderTodos (todos) {
+      // 更新任務數量
+      $('.task-counter').text(todos.length);
+      // 先藏起來，做淡入效果
+      $list.hide();
+      // 清除原本 todo
+      $list.empty();
+      for (const todo of todos) {
+        const newTodo = template
+          .replace('$todoId', todo.id)
+          .replace('$isCompleted', todo.isCompleted ? 'checked' : '')
+          .replace('$todoId', todo.id)
+          .replace('$todoName', escapeHTML(todo.name))
+        $list.prepend(newTodo);
+      }
+      $list.fadeIn(400);
+    }
+    // 更新按鈕狀態
+    function changeCurrentButton ($element) {
+      $('button.current').removeClass('current');
+      $element.addClass('current');
+    }
+    // 跳脫字元
+    function escapeHTML (unsafe) {
+      return unsafe
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/'/g, '&#039;')
+        .replace(/"/g, '&quot;');
+    }
+  </script>
+</body>
+</html>
